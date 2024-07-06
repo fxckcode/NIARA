@@ -1,3 +1,7 @@
+---
+    import Cards from './Cards.astro'
+---
+
 <div class="w-full h-auto">
     <div class="w-full flex flex-row gap-2 lg:px-10 px-2">
         <div class="flex flex-col gap-2 w-full">
@@ -11,9 +15,10 @@
             <p>Para comenzar, solo necesitas registrar tu nombre, apellido y correo electrónico. Te ofrecemos tanto una versión gratuita como una versión paga, para que elijas la que mejor se adapte a tus necesidades.</p>
             <p>Gracias por elegir NIARA. Estamos aquí para acompañarte y brindarte las herramientas que necesitas para triunfar.</p>
             <strong>¡Bienvenida a bordo!</strong>
-            <div class="w-full flex justify-center items-center">
+            <div class="w-full flex justify-center items-center mb-2">
                 <button class="p-3 rounded shadow bg-[#FF7A00] text-white font-semibold transition-all hover:-translate-y-1">Próximamente... ⚒️</button>
             </div>
+            <Cards /> 
         </div>
         <!-- <div class="w-[50%]"></div> -->
     </div>
