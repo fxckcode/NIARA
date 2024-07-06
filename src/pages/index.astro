@@ -1,0 +1,26 @@
+---
+	import Base from '../layout/Base.astro'
+	import Home from '../components/Home.astro'
+	import Politicas from '../components/Politicas.astro'
+	import Terminos from '../components/Terminos.astro'
+	import Footer from '../components/Footer.astro'
+---
+
+<Base title="NIARA | Asistente Virtual Financiero 🤖">
+	<div class="w-full flex justify-center h-[100vh]">
+		<div class="w-[65%] h-full flex justify-center items-center">
+			<Home/>
+		</div>
+	</div>
+	<div class="w-full flex justify-center h-[120vh] bg-[#FF7A00]" id="politicas">
+		<div class="w-[65%] h-full flex justify-center items-center">
+			<Politicas/>
+		</div>
+	</div>
+	<div class="w-full flex flex-col items-center justify-center h-[140vh]" id="terminos">
+		<div class="w-[65%] h-full flex justify-center items-center">
+			<Terminos/>
+		</div>
+		<Footer />
+	</div>
+</Base>
