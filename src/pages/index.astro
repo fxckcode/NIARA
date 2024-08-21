@@ -140,7 +140,11 @@ import '../styles/index.css'
                                 indexTexts.TERMS_AND_CONDITIONS_CONTENT && indexTexts.TERMS_AND_CONDITIONS_CONTENT.map((t) => (
                                     <div class="flex flex-col gap-1">
                                         <strong>{t.title}</strong>
-                                        <p>{t.subtext}</p>
+                                        {
+                                            t.subtext.map((sub_t) => (
+                                                <p>{sub_t}</p>
+                                            ))
+                                        }
                                     </div>
                                 ))
                             }
