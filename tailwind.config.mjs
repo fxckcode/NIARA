@@ -2,7 +2,11 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontSize: {
+				base: '0.875rem', // Esto es equivalente a text-sm (14px)
+			},
+		},
 	},
 	plugins: [],
 }
