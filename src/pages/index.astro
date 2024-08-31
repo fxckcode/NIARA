@@ -21,7 +21,10 @@ import "../styles/index.css";
         <meta name="theme-color" content="#FF7A00" />
 
         <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="NIARA | Asistente Virtual Financiero 🤖" />
+        <meta
+            property="og:title"
+            content="NIARA | Asistente Virtual Financiero 🤖"
+        />
         <meta
             property="og:description"
             content="¡Hola y bienvenida a NIARA! Un asistente virtual financiero con enfoque de género , desarrollado por NARANJA ERP AND ACADEMY SAS."
@@ -29,26 +32,12 @@ import "../styles/index.css";
 
         <meta property="og:url" content="https://www.niara.io/" />
 
-        <!-- Twitter Meta Tags
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Título para Twitter" />
-        <meta name="twitter:description" content="Descripción para Twitter" />
-        <meta
-            name="twitter:image"
-            content="https://www.ejemplo.com/imagen.jpg"
-        /> -->
-
         <!-- Canonical URL -->
         <link rel="canonical" href="https://www.ejemplo.com/auth/login" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300..700&display=swap"
-            rel="stylesheet"
-        />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            media="all"
         />
         <title>{indexTexts.TITLE}</title>
     </head>
@@ -110,9 +99,9 @@ import "../styles/index.css";
                                                         class={`${t.icon} text-white`}
                                                     />
                                                 </div>
-                                                <h3 class="text-2xl font-bold">
+                                                <h4 class="text-2xl font-bold">
                                                     {t.title}
-                                                </h3>
+                                                </h4>
                                             </div>
                                             <p class="text-muted-foreground">
                                                 {t.description}
@@ -195,7 +184,8 @@ import "../styles/index.css";
                         class="hover:-translate-y-1 hover:scale-105 transition-all"
                         ><a href="#politicas" class="text-[#FF7A00]"
                             >Política de privacidad</a
-                        ></span>
+                        ></span
+                    >
                 </p>
             </footer>
         </div>
