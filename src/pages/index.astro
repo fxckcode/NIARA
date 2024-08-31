@@ -1,6 +1,6 @@
 ---
 import indexTexts from "../content/index";
-import '../styles/index.css'
+import "../styles/index.css";
 ---
 
 <!doctype html>
@@ -8,6 +8,41 @@ import '../styles/index.css'
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="¡Hola y bienvenida a NIARA! Un asistente virtual financiero con enfoque de género , desarrollado por NARANJA ERP AND ACADEMY SAS."
+        />
+        <meta
+            name="keywords"
+            content="asistente, whatsapp, niara, financiero"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="NARANJA ERP" />
+        <meta name="theme-color" content="#FF7A00" />
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="NIARA | Asistente Virtual Financiero 🤖" />
+        <meta
+            property="og:description"
+            content="¡Hola y bienvenida a NIARA! Un asistente virtual financiero con enfoque de género , desarrollado por NARANJA ERP AND ACADEMY SAS."
+        />
+
+        <meta property="og:url" content="https://www.niara.io/" />
+
+        <!-- Twitter Meta Tags
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Título para Twitter" />
+        <meta name="twitter:description" content="Descripción para Twitter" />
+        <meta
+            name="twitter:image"
+            content="https://www.ejemplo.com/imagen.jpg"
+        /> -->
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://www.ejemplo.com/auth/login" />
+
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -60,10 +95,11 @@ import '../styles/index.css'
                             <div
                                 class="w-full flex justify-center items-center mb-2"
                             >
-                                <a 
+                                <a
                                     href="/auth/login"
                                     class="p-3 rounded shadow bg-[#FF7A00] text-white font-semibold transition-all hover:-translate-y-1"
-                                    >Iniciar Sesión</a >
+                                    >Iniciar Sesión</a
+                                >
                             </div>
                             <div
                                 class="w-full flex flex-row flex-wrap justify-center items-center gap-5"
@@ -133,27 +169,37 @@ import '../styles/index.css'
                 <div class="w-full h-auto">
                     <div class="flex flex-col gap-4 w-full lg:px-10 px-2">
                         <h2 class="text-2xl font-bold text-center">
-                            { indexTexts.TERMS_AND_CONDITIONS_TITLE }
+                            {indexTexts.TERMS_AND_CONDITIONS_TITLE}
                         </h2>
                         <div class="flex flex-col gap-3">
                             {
-                                indexTexts.TERMS_AND_CONDITIONS_CONTENT && indexTexts.TERMS_AND_CONDITIONS_CONTENT.map((t) => (
-                                    <div class="flex flex-col gap-1">
-                                        <strong>{t.title}</strong>
-                                        {
-                                            t.subtext.map((sub_t) => (
-                                                <p>{sub_t}</p>
-                                            ))
-                                        }
-                                    </div>
-                                ))
+                                indexTexts.TERMS_AND_CONDITIONS_CONTENT &&
+                                    indexTexts.TERMS_AND_CONDITIONS_CONTENT.map(
+                                        (t) => (
+                                            <div class="flex flex-col gap-1">
+                                                <strong>{t.title}</strong>
+                                                {t.subtext.map((sub_t) => (
+                                                    <p>{sub_t}</p>
+                                                ))}
+                                            </div>
+                                        ),
+                                    )
                             }
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="w-full flex justify-center items-center shadow-lg h-10">
-                <p class="text-center font-bold text-[10px] md:text-base">Copyright © 2024 Naranja Erp. Todos los derechos reservados. <span class="hover:-translate-y-1 hover:scale-105 transition-all"><a href="#politicas" class="text-[#FF7A00]">Política de privacidad</a></span></p>
+            <footer
+                class="w-full flex justify-center items-center shadow-lg h-10"
+            >
+                <p class="text-center font-bold text-[10px] md:text-base">
+                    Copyright © 2024 Naranja Erp. Todos los derechos
+                    reservados. <span
+                        class="hover:-translate-y-1 hover:scale-105 transition-all"
+                        ><a href="#politicas" class="text-[#FF7A00]"
+                            >Política de privacidad</a
+                        ></span>
+                </p>
             </footer>
         </div>
     </body>

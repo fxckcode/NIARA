@@ -34,10 +34,6 @@ function SignUpForm() {
                         name: country.name.common,
                         callingCode: country.idd.root + (country.idd.suffixes ? country.idd.suffixes.join(', ') : '')
                     }));
-
-                    console.log(code);
-
-
                     setCountry(code)
                 }
             })
@@ -107,11 +103,17 @@ function SignUpForm() {
         } else if (!/[a-zA-Z]/.test(password)) {
             newErrors.password = 'La contraseña debe contener al menos una letra';
             isValid = false;
+        } else if (!/\d/.test(password)) {
+            newErrors.password = 'La contraseña debe contener al menos un número';
+            isValid = false;
         } else if (/^\d+$/.test(password)) {
             newErrors.password = 'La contraseña no puede ser completamente numérica';
             isValid = false;
+        } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            newErrors.password = 'La contraseña debe contener al menos un carácter especial';
+            isValid = false;
         }
-
+               
         setErrors(newErrors);
         return isValid;
     };
@@ -159,10 +161,14 @@ function SignUpForm() {
                     required
                 />
 
-                <Select label='Zona Horaria' error={errors.zonaHoraria}>
+                <Select label='Zona Horaria' error={errors.zonaHoraria} value={zonaHoraria} onChange={(e) => {
+                    setZonaHoraria(e.target.value)
+                    validateForm()
+                }}>
+                    <option value="">Seleccionar...</option>
                     {
-                        timezone.map((t) => (
-                            <option value="">{t}</option>
+                        timezone.map((t, index) => (
+                            <option value={t} key={index}>{t}</option>
                         ))
                     }
                 </Select>
@@ -177,6 +183,7 @@ function SignUpForm() {
                         }}
                         required
                     >
+                        <option value="">Seleccionar...</option>
                         {
                             country.map((c, index) => (
                                 <option value={c.callingCode} key={index}>{c.callingCode} {c.name}</option>
@@ -185,7 +192,7 @@ function SignUpForm() {
                         
                     </Select>
                     <Input
-                        type='text'
+                        type='number'
                         label='Celular'
                         placeholder='Celular'
                         value={celular}
@@ -194,12 +201,10 @@ function SignUpForm() {
                             setCelular(e.target.value);
                             validateForm();
                         }}
+                        maxLength={10}
                         required
                     />
                 </div>
-                {errors.indicativo && <div className="text-red-500 text-sm">{errors.indicativo}</div>}
-                {errors.celular && <div className="text-red-500 text-sm">{errors.celular}</div>}
-
                 <Input
                     type='text'
                     label='Email'
