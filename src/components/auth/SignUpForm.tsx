@@ -3,6 +3,7 @@ import Button from '../UI/Button';
 import Input from '../UI/Input';
 import Select from '../UI/Select';
 import axios from 'axios';
+import { signUp } from '../../services/signUp.services';
 
 function SignUpForm() {
     const [nombres, setNombres] = useState('');
@@ -117,18 +118,20 @@ function SignUpForm() {
         setErrors(newErrors);
         return isValid;
     };
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (validateForm()) {
-            console.log('Formulario válido:', {
-                nombres,
-                apellidos,
-                zonaHoraria,
-                indicativo,
-                celular,
+            const data = {
                 email,
-                password
-            });
+                first_name: nombres,
+                last_name: apellidos,
+                password,
+                timezones: zonaHoraria,
+                indicative: indicativo,
+                phone: celular
+            }
+
+            await signUp(data)
         }
     };
 
