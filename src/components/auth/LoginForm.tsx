@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
+import { login } from '../../services/login.services'
 
 function LoginForm() {
-  const [ email, setEmail ] = useState('')
-  const [ password, setPassword ] = useState('')
-  const [ errors, setErrors ] = useState({
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState({
     email: '',
   })
 
@@ -22,15 +23,16 @@ function LoginForm() {
     } else {
       newErrors.email = ''
     }
-  
+
     setErrors(newErrors)
+
     return isValid
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (validateForm()) {
-      console.log('Formulario válido:', { email, password })
+      await login(email, password)
     }
   }
 
